@@ -1,12 +1,27 @@
 <html>
-    <head>
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    </head>
-    <body>
-       <script>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <!-- <script>
            axios.get("https://localhost:7049/stud").then(res=>{
                alert(res.data);
            })
-       </script>
-    </body>
+       </script> -->
+    <!-- <script>
+        axios.get("https://localhost:7049/stud/query", { params: { name: 'airmanx', age: 18 } })
+            .then(res => {
+                alert(res.data);
+            });
+    </script> -->
+    <script>
+        axios.get("https://localhost:7049/stud/query/name/airmanx/age/18")
+            .then(res => {
+                alert(res.data);
+            });
+    </script>
+</body>
+
 </html>
