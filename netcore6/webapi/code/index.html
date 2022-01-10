@@ -27,7 +27,7 @@
         axios.post("https://localhost:7049/stud/import", studs).then(res => {
             alert(res.data);
         }).catch(err => {
-            debugger;
+            alert(Object.entries(err.response.data.errors).join());
         })
     </script>
 </body>
