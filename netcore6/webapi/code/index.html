@@ -16,11 +16,19 @@
                 alert(res.data);
             });
     </script> -->
-    <script>
+    <!-- <script>
         axios.get("https://localhost:7049/stud/query/name/airmanx/age/18")
             .then(res => {
                 alert(res.data);
             });
+    </script> -->
+    <script>
+        let studs = [{ name: 'airmanx', age: -10 }, { name: 'ccsu', age: 55 }];
+        axios.post("https://localhost:7049/stud/import", studs).then(res => {
+            alert(res.data);
+        }).catch(err => {
+            debugger;
+        })
     </script>
 </body>
 
