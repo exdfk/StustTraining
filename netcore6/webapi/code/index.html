@@ -5,27 +5,59 @@
 </head>
 
 <body>
-    <!-- <script>
+    <span>name:</span><input id="name" /><br />
+    <span>age:</span><input id="age" /><br />
+    <input type="file" id="file" multiple /><br />
+    <input type="button" onclick="sumbit()" value="提交" />
+</body>
+<script>
+    let sumbit = () => {
+        let name = document.getElementById("name").value;
+        let age = document.getElementById("age").value;
+        let files = document.getElementById('file').files;
+        let formData = new FormData();
+        for (var i = 0; i < files.length; i++)
+            formData.append("files", files[i]);
+
+        debugger;
+        formData.append("name", name);
+        formData.append("age", age);
+
+        axios.post("https://localhost:7049/stud/fileuplaods", formData, { headers: { "Content-Type": "multipart/form-data" } }).then(res => {
+            debugger;
+        })
+    }
+</script>
+
+
+<!-- <script>
+    document.getElementById('textbox_id').value
+    document.getElementById('input').files;
+
+</script> -->
+
+
+<!-- <script>
            axios.get("https://localhost:7049/stud").then(res=>{
                alert(res.data);
            })
        </script> -->
-    <script>
-        axios.get("https://localhost:7049/stud/query", { params: { name: '<script>alert("hello"</scritp>', age: 50 } })
-            .then(res => {
-                alert(res.data);
-            })
-            .catch(err=>{
-                alert(Object.entries(err.response.data.errors).join());
-            })   
-    </script>
-    <!-- <script>
+<!-- <script>
+    axios.get("https://localhost:7049/stud/query", { params: { name: '<script>alert("hello"</scritp>', age: 50 } })
+        .then(res => {
+            alert(res.data);
+        })
+        .catch(err => {
+            alert(Object.entries(err.response.data.errors).join());
+        })   
+</script> -->
+<!-- <script>
         axios.get("https://localhost:7049/stud/query/name/airmanx/age/18")
             .then(res => {
                 alert(res.data);
             });
     </script> -->
-    <!-- <script>
+<!-- <script>
         let studs = [{ name: 'airmanx', age: -10 }, { name: 'ccsu', age: 55 }];
         axios.post("https://localhost:7049/stud/import", studs).then(res => {
             alert(res.data);
