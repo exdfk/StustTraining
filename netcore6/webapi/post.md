@@ -35,4 +35,4 @@
         })
     </script>
    ```  
-   ### [上一頁 WEB API 傳參](get2.md)
+   ### [上一頁 DataAnnotations](dataAnnotations.md)
