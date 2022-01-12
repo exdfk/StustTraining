@@ -22,7 +22,7 @@
 4. 好了，專案執行跑起來，接下來寫一段javascript測試一下  
     ```html
     <script>
-        axios.get("https://localhost:7049/stud/query", { params: { name: 'airmanx', age: 18 } })
+        axios.get("https://localhost:7049/stud/query")
         .then(res => {
             alert(res.data);
         });
