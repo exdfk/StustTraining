@@ -18,13 +18,10 @@
         let formData = new FormData();
         for (var i = 0; i < files.length; i++)
             formData.append("files", files[i]);
-
-        debugger;
         formData.append("name", name);
         formData.append("age", age);
-
-        axios.post("https://localhost:7049/stud/fileuplaods", formData, { headers: { "Content-Type": "multipart/form-data" } }).then(res => {
-            debugger;
+        axios.post("https://localhost:7049/stud/fileuplaods", formData).then(res => {
+            alert(res.data);
         })
     }
 </script>
@@ -65,6 +62,5 @@
             alert(Object.entries(err.response.data.errors).join());
         })
     </script> -->
-</body>
 
 </html>
